@@ -1,10 +1,9 @@
-# :package_description
+# None
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/:vendor_name/:package_name.svg?style=flat-square)](https://packagist.org/packages/:vendor_name/:package_name)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/:vendor_name/:package_name/run-tests?label=tests)](https://github.com/:vendor_name/:package_name/actions?query=workflow%3Arun-tests+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/:vendor_name/:package_name.svg?style=flat-square)](https://packagist.org/packages/:vendor_name/:package_name)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/jezzdk/laravel-request-log.svg?style=flat-square)](https://packagist.org/packages/jezzdk/laravel-request-log)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/jezzdk/laravel-request-log/run-tests?label=tests)](https://github.com/jezzdk/laravel-request-log/actions?query=workflow%3Arun-tests+branch%3Amaster)
+[![Total Downloads](https://img.shields.io/packagist/dt/jezzdk/laravel-request-log.svg?style=flat-square)](https://packagist.org/packages/jezzdk/laravel-request-log)
 
-**Note:** Run `./configure-skeleton` to get started, or manually replace  ```:author_name``` ```:author_username``` ```:author_email``` ```:vendor_name``` ```:package_name``` ```:package_description``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](.github/CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files, then delete this line. You can also run `configure-skeleton.sh` to do this automatically.
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
@@ -23,19 +22,19 @@ We highly appreciate you sending us a postcard from your hometown, mentioning wh
 You can install the package via composer:
 
 ```bash
-composer require :vendor_name/:package_name
+composer require jezzdk/laravel-request-log
 ```
 
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --provider="Spatie\Skeleton\SkeletonServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="Jezzdk\LaravelRequestLog\RequestLogServiceProvider" --tag="migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="Spatie\Skeleton\SkeletonServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Jezzdk\LaravelRequestLog\RequestLogServiceProvider" --tag="config"
 ```
 
 This is the contents of the published config file:
@@ -47,9 +46,10 @@ return [
 
 ## Usage
 
+Add the following middleware anywhere in the middleware stack where you want to log requests:
+
 ``` php
-$skeleton = new Spatie\Skeleton();
-echo $skeleton->echoPhrase('Hello, Spatie!');
+\Jezzdk\LaravelRequestLog\Middleware\LogRequest::class,
 ```
 
 ## Testing
@@ -72,7 +72,7 @@ If you discover any security related issues, please email freek@spatie.be instea
 
 ## Credits
 
-- [:author_name](https://github.com/:author_username)
+- [Jess Stopa](https://github.com/jezzdk)
 - [All Contributors](../../contributors)
 
 ## License

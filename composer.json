@@ -1,17 +1,16 @@
 {
-    "name": ":vendor_name/:package_name",
-    "description": ":package_description",
+    "name": "jezzdk/laravel-request-log",
+    "description": "None",
     "keywords": [
-        ":vendor_name",
-        ":package_name"
+        "laravel-request-log"
     ],
-    "homepage": "https://github.com/:vendor_name/:package_name",
+    "homepage": "https://github.com/jezzdk/laravel-request-log",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
-            "homepage": "https://spatie.be",
+            "name": "Jess Stopa",
+            "email": "jess@stopa.dk",
+            "homepage": "https://stopa.dk",
             "role": "Developer"
         }
     ],
@@ -19,41 +18,28 @@
         "php": "^7.4"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.16",
         "orchestra/testbench": "^5.0",
-        "phpunit/phpunit": "^9.3",
-        "psalm/plugin-laravel": "^1.2",
-        "vimeo/psalm": "^3.11"
+        "phpunit/phpunit": "^9.3"
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\Skeleton\\": "src"
+            "Jezzdk\\LaravelRequestLog\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\Skeleton\\Tests\\": "tests"
+            "Jezzdk\\LaravelRequestLog\\Tests\\": "tests"
         }
     },
     "scripts": {
-        "psalm": "vendor/bin/psalm",
         "test": "vendor/bin/phpunit",
-        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
-        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
-    },
-    "config": {
-        "sort-packages": true
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Spatie\\Skeleton\\SkeletonServiceProvider"
-            ],
-            "aliases": {
-                "Skeleton": "Spatie\\Skeleton\\SkeletonFacade"
-            }
+              "Jezzdk\\LaravelRequestLog\\RequestLogServiceProvider"
+            ]
         }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
