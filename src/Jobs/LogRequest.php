@@ -7,7 +7,6 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use Jezzdk\LaravelRequestLog\RequestLog;
 
 class LogRequest implements ShouldQueue
 {
@@ -33,6 +32,10 @@ class LogRequest implements ShouldQueue
      */
     public function handle()
     {
-        RequestLog::create($this->data);
+        $className = config('request-log.model');
+
+        $model = new $className();
+        $model->fill($this->data);
+        $model->save();
     }
 }

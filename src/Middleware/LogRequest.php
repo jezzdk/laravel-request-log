@@ -11,6 +11,10 @@ class LogRequest
 {
     public function handle(Request $request, Closure $next)
     {
+        if (config('request-log.enabled') !== true) {
+            return $next($request);
+        }
+
         /** @var $response Response */
         $response = $next($request);
 

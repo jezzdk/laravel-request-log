@@ -12,6 +12,10 @@ class TestCase extends Orchestra
         parent::setUp();
 
         $this->withFactories(__DIR__.'/database/factories');
+
+        if (!defined('LARAVEL_START')) {
+            define('LARAVEL_START', microtime(true));
+        }
     }
 
     protected function getPackageProviders($app)
@@ -30,9 +34,7 @@ class TestCase extends Orchestra
             'prefix' => '',
         ]);
 
-        /*
         include_once __DIR__.'/../database/migrations/create_request_log_table.php.stub';
-        (new \CreatePackageTable())->up();
-        */
+        (new \CreateRequestLogTable())->up();
     }
 }

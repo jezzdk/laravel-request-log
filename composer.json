@@ -1,6 +1,7 @@
 {
     "name": "jezzdk/laravel-request-log",
     "description": "Log all requests in the database.",
+    "version": "1.0.0",
     "keywords": [
         "laravel-request-log"
     ],

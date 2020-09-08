@@ -3,6 +3,7 @@
 namespace Jezzdk\LaravelRequestLog;
 
 use Illuminate\Support\ServiceProvider;
+use Jezzdk\LaravelRequestLog\Commands\CleanRequestLogCommand;
 use Jezzdk\LaravelRequestLog\Commands\FlushRequestLogCommand;
 
 class RequestLogServiceProvider extends ServiceProvider
@@ -23,6 +24,7 @@ class RequestLogServiceProvider extends ServiceProvider
 
             $this->commands([
                 FlushRequestLogCommand::class,
+                CleanRequestLogCommand::class
             ]);
         }
     }
