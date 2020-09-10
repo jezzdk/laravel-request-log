@@ -1,7 +1,7 @@
 {
     "name": "jezzdk/laravel-request-log",
     "description": "Log all requests in the database.",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "keywords": [
         "laravel-request-log"
     ],
@@ -16,7 +16,8 @@
         }
     ],
     "require": {
-        "php": "^7.4"
+        "php": ">=7.3",
+        "illuminate/validation": "^6.18|^7.0|^8.0"
     },
     "require-dev": {
         "orchestra/testbench": "^5.0",
